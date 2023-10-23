@@ -4,6 +4,7 @@ import uvicorn
 import pickle
 import pandas as pd
 
+# Grupo: Antonio Martins e Rodrigo Anciães
 
 class AmesMeasurment (BaseModel):
     Mas_Vnr_Area: float         # Em square feet            
@@ -52,14 +53,6 @@ def get_prediction(data: AmesMeasurment):
     sample_data = [[mas_vnr_area, foundation_other, fireplaces, remod_age, kitchen_qual, garage_age, lot_area, garage_cars, x1st_flr_sf, bsmtfin_sf_1, exter_qual, total_bsmt_sf, garage_area, gr_liv_area, overall_qual]]
     prediction = stack_reg.predict(sample_data)
 
-    # Use the values of data to predict the price of the house
-    # prediction = stack_reg.predict(data)[0]
     return {
         'preço': prediction[0]
     }
-
-# Index(['Mas_Vnr_Area'_ 'Foundation_Other'_ 'Fireplaces'_ 'Remod_Age'_
-#        'Kitchen_Qual'_ 'Garage_Age'_ 'Lot_Area'_ 'Garage_Cars'_ 'X1st_Flr_SF'_
-#        'BsmtFin_SF_1'_ 'Exter_Qual'_ 'Total_Bsmt_SF'_ 'Garage_Area'_
-#        'Gr_Liv_Area'_ 'Overall_Qual']_
-#       dtype='object')

@@ -25,7 +25,7 @@ class AmesMeasurment (BaseModel):
 
 app = FastAPI()
 
-stack_reg = pickle.load(open('stack_reg.pkl', 'rb'))
+stack_reg = pickle.load(open('../models/stack_reg.pkl', 'rb'))
 
 @app.get('/')
 def index():
